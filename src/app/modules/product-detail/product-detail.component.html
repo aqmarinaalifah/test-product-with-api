@@ -1,0 +1,63 @@
+<div
+  *ngIf="isloading"
+  class="fixed inset-0 bg-blue-950 bg-opacity-50 flex justify-center items-center z-50"
+>
+  <p-progressSpinner
+    [style]="{ width: '6rem', height: '6rem' }"
+  ></p-progressSpinner>
+</div>
+<div class="font-semibold text-xl text-gray-800 mt-2 mb-3">Product Detail</div>
+<div class="app-container px-6 rounded">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="rounded" style="background-color: #e2e8f0">
+      <img
+        [src]="productDetail.thumbnail"
+        [alt]="productDetail.title"
+        class="object-fill"
+      />
+    </div>
+    <div class="col-span-2">
+      <div class="flex justify-between items-center">
+        <div class="pr-3">
+          <div class="text-4xl font-bold my-2">{{ productDetail.title }}</div>
+          <div class="text-xl my-2">
+            {{ productDetail.brand }}
+          </div>
+        </div>
+        <div class="text-4xl backButton py-2 px-4 my-2 rounded-lg">
+          {{
+            productDetail.price | currency: "USD" : "symbol-narrow" : "1.2-2"
+          }}
+        </div>
+      </div>
+      <div class="text-justify my-2">{{ productDetail.description }}</div>
+      <div class="my-2">
+        {{ productDetail.rating }}
+        <i class="pi pi-star" style="color: gold"></i> |
+        {{ productDetail.reviews?.length }} Ratings
+      </div>
+      <div class="flex gap-2 my-2">
+        <div>Stock :</div>
+        <div>{{ productDetail.stock }}</div>
+      </div>
+      <div class="flex gap-2 my-2">
+        <div>Weight :</div>
+        <div>{{ productDetail.weight }} g</div>
+      </div>
+      <div class="flex gap-2 my-2">
+        <div>Minimum Order :</div>
+        <div>{{ productDetail.minimumOrderQuantity }}</div>
+      </div>
+      <div class="flex gap-2 my-2">
+        <div>Waranty :</div>
+        <div>{{ productDetail.warrantyInformation }}</div>
+      </div>
+      <button
+        class="backButton py-2 px-4 my-2 rounded-lg cursor-pointer"
+        (click)="onBack()"
+      >
+        Buy
+      </button>
+    </div>
+  </div>
+</div>
