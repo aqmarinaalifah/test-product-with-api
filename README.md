@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.20.
 
+## Demo
+
+https://aqmarinaalifah.github.io/test-product-with-api
+
+## API Integration
+
+Data for this project is fetched from https://dummyjson.com/docs
+- **Endpoints used:** `/products`, `/auth/login`
+- **Purpose:** To demonstrate state management and asynchronous data fetching in Angular.
+
 ## Requirements
 
 Node.js >= v18.13.0
